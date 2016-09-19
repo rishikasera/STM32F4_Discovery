@@ -1,0 +1,86 @@
+Right Click in Project Explore
+
+New -> C Project
+
+*******************************
+Project Name : xyz
+
+Select Embedded C Project
+
+*************************Next***
+
+Targets : 
+
+vender : STMicroElectronics
+EB     : None
+MC F   : STM32F40xx/41xx devices
+MC     : STM32F407VG
+FP     : Hardware implementation 
+FPU    : FPv4-SP-D16
+C Loc  : FLASH
+
+Instruction Set : Thumb2
+
+Endianess :  Little Endian
+
+******************************************Next***************
+
+
+
+
+
+******************************************Next***************
+
+
+Debug Probe : ST-LINK
+
+****************************************** Next   ***************
+
+****************************************** Finish ***************
+
+
+
+
+Clock Settings :
+*****************
+
+open system_stm32f4xx.c
+goto 155
+change
+ PLL_M   25
+to
+ PLL_M   8
+
+open stm32f4xx.h
+goto 100
+change from :
+HSE_VLAUE   ((uint32_t)25000000)
+to
+HSE_VLAUE   ((uint32_t)8000000)
+
+
+*****************************************************************************
+
+Build Code :
+
+
+Right Click on the Project name :
+Click on Build.
+
+You can see log in below Console.
+
+chk text data bss dec hex filename at log end
+if build complete successfully.
+
+******************************************************************************
+
+Load on Microcontroller :
+
+Run -> Debug  
+apperence change
+debug mode
+
+click on resume button (to run code on board)
+
+
+*******************************************************************************
